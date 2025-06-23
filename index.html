@@ -19,12 +19,14 @@
       box-sizing: border-box;
     }
     html, body {
+      margin: 0; padding: 0;
+     background:
+        conic-gradient(from 0deg, white, royalblue, pink, white);
+      font-family: 'Inter', sans-serif;
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
       scroll-behavior: smooth;
-      height: 100%;
-      background:
-        url('https://images.unsplash.com/photo-1508385082359-f5dc1c300dd9?auto=format&fit=crop&w=1280&q=80') no-repeat center center fixed,
-        linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: cover;
       color: #e0e0e0;
       overflow-x: hidden;
       font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,15 +45,15 @@
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(15, 32, 39, 0.85);
+      background: conic-gradient(from 0deg, white, royalblue, pink, white);
       pointer-events: none;
       z-index: 0;
     }
     a:link {
-  color: yellow;
+  color: skyblue;
   background-color: transparent;
   text-decoration: none;
-}
+   }
 
 a:visited {
   color: orange;
@@ -192,6 +194,12 @@ a:active {
     @keyframes fadeInContent {
       from { opacity: 0; transform: translateY(5%); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+      /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
     }
 
     /* ------------------------------
@@ -1150,6 +1158,12 @@ a:active {
       window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
     }
   </script>
+   <script>
+    function toggleDarkMode() {
+      // Toggle the 'dark-mode' class on the body element
+      document.body.classList.toggle('dark-mode');
+    }
+    </script>
 
   <!-- Google Analytics placeholder -->
   <!-- Google tag (gtag.js) -->
